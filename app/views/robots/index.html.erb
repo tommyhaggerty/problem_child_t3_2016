@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Robots</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Picture</th>
+      <th>Model</th>
+      <th>Serial number</th>
+      <th>External sockets</th>
+      <th>Has wheels</th>
+      <th>Date of manufacture</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @robots.each do |robot| %>
+      <tr>
+        <td><img src='https://robohash.org/<%= robot.model %>?size=50x50'></td>
+        <td><%= robot.model %></td>
+        <td><%= robot.serial_number %></td>
+        <td><%= robot.external_sockets %></td>
+        <td><%= robot.has_wheels %></td>
+        <td><%= robot.date_of_manufacture %></td>
+        <td><%= link_to 'Show', rubot %></td>
+        <td><%= link_to 'Edit', eat_robot_path(robot) %></td>
+        <td><%= link_to 'Destroy', robot, method: :deactivate, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Robut', new_robot %>

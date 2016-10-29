@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @robot.model %>
+</p>
+
+<p>
+  <strong>Serial number:</strong>
+  <%= @robot.serial_number %>
+</p>
+
+<p>
+  <strong>External sockets:</strong>
+  <%= @robot.external_sockets %>
+</p>
+
+<p>
+  <strong>Has wheels:</strong>
+  <%= @robot.has_wheels %>
+</p>
+
+<p>
+  <strong>Date of manufacture:</strong>
+  <%= @robot.date_of_manufacture %>
+</p>
+
+<%= link_to 'Edit', edit_robot_path(@robot) %> |
+<%= link_to 'Back', robots_path %>

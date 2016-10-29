@@ -1,0 +1,42 @@
+<%= form_for(robot) do |f| %>
+  <% if robot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(robot.errors.count, "error") %> prohibited this robot from being saved:</h2>
+
+      <ul>
+      <% robot.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :model %>
+    <%= f.text_field :model %>
+  </div>
+
+  <div class="field">
+    <%= f.label :serial_number %>
+    <%= f.text_field :serial_number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :external_sockets %>
+    <%= f.text_field :external_sockets %>
+  </div>
+
+  <div class="field">
+    <%= f.label :has_wheels %>
+    <%= f.check_box :has_wheels %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date_of_manufacture %>
+    <%= f.date_select :date_of_manufacture %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
