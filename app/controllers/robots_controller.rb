@@ -1,8 +1,9 @@
-class RobotsController
+class RobotsController < ApplicationController
+  before_action :set_robot, only: [:show, :edit, :update, :destroy]
   # GET /robots
   # GET /robots.json
   def index
-    @robots = Rubot.all
+    @robots = Robot.all
   end
 
   # GET /robots/1
@@ -40,7 +41,7 @@ class RobotsController
   def update
     respond_to do |format|
       if @robot.update(robot_params)
-        format.html { redirect_to @robot, notice: 'Robot was successfully updated.' }
+        format.html { redirect_to robots_url, notice: 'Robot was successfully updated.' }
         format.json { render :show, status: :ok, location: @robot }
       else
         format.html { render :edit }
