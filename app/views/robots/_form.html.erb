@@ -1,5 +1,5 @@
-<%= form_for(robot) do |f| %>
-  <% if robot.errors.any? %>
+<%= form_for(@robot) do |f| %>
+  <% if @robot.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(robot.errors.count, "error") %> prohibited this robot from being saved:</h2>
 
